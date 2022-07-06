@@ -2,10 +2,10 @@ import React from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,}) {
+export default function Todo({ todo, toggleComplete, Delete, Edit,}) {
   const [newTitle, setNewTitle] = React.useState(todo.title);
 
-  const handleChange = (e) => {
+  const Change = (e) => {
     e.preventDefault();
     if (todo.complete === true) {
       setNewTitle(todo.title);
@@ -21,7 +21,7 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
         type="text"
         value={todo.title === "" ? newTitle : todo.title}
         className="list"
-        onChange={handleChange}
+        onChange={Change}
       />
       <div>
         <button
@@ -32,11 +32,11 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit,})
         </button>
         <button
           className="button-edit"
-          onClick={() => handleEdit(todo, newTitle)}
+          onClick={() => Edit(todo, newTitle)}
         >
           <EditIcon id="i" />
         </button>
-        <button className="button-delete" onClick={() => handleDelete(todo.id)}>
+        <button className="button-delete" onClick={() => Delete(todo.id)}>
           <DeleteIcon id="i" />
         </button>
       </div>

@@ -29,13 +29,13 @@ function App() {
     return () => unsub();
   }, []);
 
-  const handleEdit = async (todo, title) => {
+  const Edit = async (todo, title) => {
     await updateDoc(doc(db, "todos", todo.id), { title: title });
   };
   const toggleComplete = async (todo) => {
     await updateDoc(doc(db, "todos", todo.id), { completed: !todo.completed });
   };
-  const handleDelete = async (id) => {
+  const Delete = async (id) => {
     await deleteDoc(doc(db, "todos", id));
   };
   return (
