@@ -52,8 +52,8 @@ function App() {
             key={todo.id}
             todo={todo}
             toggleComplete={toggleComplete}
-            handleDelete={handleDelete}
-            handleEdit={handleEdit}
+            Delete={Delete}
+            Edit={Edit}
           />
         ))}
       </div>
